@@ -1,0 +1,565 @@
+// -----
+// 設定
+// -----
+
+// 色
+$color-main: #e81919; // ベース色
+$color-active: #e81919; // アクティブ色
+$color-background-base: #f5f5f5; // 背景色
+$color-text-base: #333; // テキスト色
+$hover-opacity: 0.6; // 透過度
+
+// レイアウト幅
+$layout-width-canvas: 1280px;
+$layout-width-inner: 1200px;
+
+// 階層
+$layer: (
+	modal: 100,
+	// モダール
+	drawer: 40,
+	// ドロワー
+	floating: 30,
+	// フローティングアイテム
+	header: 20,
+	// ヘッダー
+	footer: 10,
+	// フッター
+	default: 1,
+);
+
+// 余白
+$padding-pc: 24px;
+$padding-tab: 24px;
+$padding-sp: 16px;
+
+// ヘッダー高さ
+$header-height-pc: 80px;
+$header-height-sp: 60px;
+
+// フォント
+$font-family-default: "proxima-nova", "游ゴシック体", "Yu Gothic", yugothic, "ヒラギノ角ゴ Pro",
+	"Hiragino Kaku Gothic Pro", "メイリオ", meiryo, "MS Pゴシック", "MS PGothic", sans-serif; // 標準フォント
+$font-family-english: sans-serif;
+$font-family-base: $font-family-default;
+$font-size-base: 16px;
+$font-weight-base: 400;
+$line-height-base: 1.6;
+
+// ブレークポイント
+$breakpoints: (
+	"sp": "(max-width: 767px)",
+	"tab-only": "(min-width: 768px) and (max-width: #{$layout-width-inner + $padding-pc * 2 - 1px})",
+	"tab": "(max-width: #{$layout-width-inner + $padding-pc * 2 - 1px})",
+	"pc": "(min-width: #{$layout-width-inner})",
+);
+
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+// -----
+// 初期化
+// -----
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	font-weight: $font-weight-base;
+	color: $color-text-base;
+	line-height: $line-height-base;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: $color-background-base;
+	overflow-x: hidden;
+	overflow-wrap: break-word;
+	padding-top: $header-height-pc;
+
+	@include mq("sp") {
+		padding-top: $header-height-sp;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	border: none;
+}
+
+// -----
+// 補完クラス
+// -----
+
+// PCだけ非表示
+.hidden-pc {
+	@include mq("pc") {
+		display: none;
+	}
+}
+
+// タブレットだけ非表示
+.hidden-tab {
+	@include mq("tab-only") {
+		display: none;
+	}
+}
+
+// スマホだけ非表示
+.hidden-sp {
+	@include mq("sp") {
+		display: none;
+	}
+}
+
+// インナー
+.inner {
+	width: $layout-width-inner;
+	max-width: 100%;
+	margin: 0 auto;
+	height: inherit;
+
+	@include mq("tab") {
+		padding-left: $padding-tab;
+		padding-right: $padding-tab;
+	}
+
+	@include mq("sp") {
+		padding-left: $padding-sp;
+		padding-right: $padding-sp;
+	}
+}
+
+// -----
+// ヘッダー
+// -----
+
+.header {
+	background: #fff;
+	height: $header-height-pc;
+	@include mq("sp") {
+		height: $header-height-sp;
+	}
+}
+
+.header_inner {
+	display: flex;
+	align-items: center;
+}
+
+.header_title {
+	h1 {
+		color: $color-main;
+		font-weight: bold;
+	}
+	padding: 15px 15px 15px 10px;
+	text-decoration: none;
+	display: block;
+	font-size: 30px;
+	letter-spacing: 1.5;
+	@include mq("sp") {
+		font-size: 1.2rem;
+	}
+}
+
+.header_nav {
+	margin-left: auto;
+}
+
+.header_nav_items {
+	display: flex;
+	justify-content: space-around;
+}
+
+.header_nav_item {
+	margin-left: 30px;
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+.header_nav_link {
+	text-decoration: none;
+	font-size: 1.2rem;
+	color: grey;
+	font-weight: bold;
+	position: relative;
+	display: inline-block;
+	transition: 0.3s;
+    padding: 10px 0;
+
+    &:hover {
+        color: #333;
+    }
+
+	&::after {
+		position: absolute;
+		bottom: 2px;
+		left: 0;
+		content: "";
+		width: 0;
+		height: 1.5px;
+		background-color: $color-main;
+		transition: 0.3s;
+	}
+
+	&:hover::after {
+        width: 100%;
+	}
+}
+
+// -----
+// トップ
+// -----
+
+.top_inner {
+	background: url(/asset/img/top-image.jpg) top center / cover;
+	width: 100%;
+	height: 600px;
+	position: relative;
+}
+
+.top_box {
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.top_title {
+	color: #fff;
+	font-size: 6.3vw;
+	@include mq("sp") {
+		font-size: 3rem;
+		line-height: 1.3;
+	}
+	font-weight: bold;
+}
+
+.top_sub {
+	color: #fff;
+	font-weight: bold;
+	margin-top: 25px;
+	text-align: center;
+	font-size: 2.2rem;
+	line-height: $line-height-base;
+	@include mq("tab") {
+		font-size: 1.5rem;
+	}
+}
+
+.top_footer {
+	position: absolute;
+	top: 65%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	@include mq("sp") {
+		top: 70%;
+	}
+}
+
+.btn {
+	text-decoration: none;
+	text-align: center;
+	overflow: hidden;
+	transition: 0.6s;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	cursor: pointer;
+}
+
+.top_btn {
+	outline: none;
+	background: $color-main;
+	opacity: 0.9;
+	color: #fff;
+	width: 140px;
+	height: 140px;
+	line-height: 120px;
+	border-radius: 50%;
+	border: double 8px #fff;
+	font-size: 50px;
+	display: block;
+
+	&:hover {
+		-webkit-transform: rotateY(360deg);
+		transform: rotateY(360deg);
+	}
+}
+
+// -----
+// フッター
+// -----
+
+.footer {
+	margin-top: 40px;
+	height: $header-height-pc;
+	background-color: grey;
+}
+
+.footer_inner {
+	padding-top: 33px;
+	text-align: center;
+	font-size: 1rem;
+	color: #fff;
+	font-family: $font-family-base;
+}
+
+// -----
+// Movies
+// -----
+
+.movies_inner {
+	padding-top: 30px;
+	text-align: center;
+}
+
+.section_title {
+	text-align: center;
+	h2 {
+		font-size: 3.0rem;
+		font-weight: bold;
+
+		@include mq('sp') {
+			font-size: 2.0rem;
+		}
+	}
+}
+
+.movies_items {
+	margin-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	@include mq('sp') {
+		margin-top: 30px;
+		display: block;
+	}
+}
+
+.movies_item {
+	padding: 10px;
+	background-color: #fff;
+	height: 100%;
+	min-height: 315px;
+	border-radius: 3px;
+	box-shadow: 0 0 2px gray;
+
+
+	@include mq('pc') {
+		margin: 0 50px 50px 0;
+		width: calc(33.3333333% - 100px / 3);
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+	}
+
+	@include mq('tab') {
+		width: calc(50% - 50px / 2);
+		margin: 0 50px 50px 0;
+
+		&:nth-child(3n) {
+			margin-right: 50px;
+		}
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+	}
+
+	@include mq('sp') {
+		width: 100%;
+	}
+}
+
+.movies_item_head {
+	@include mq('sp') {
+		margin: 0 auto;
+	}
+	iframe {
+		width: 100%;
+		max-width: 560px;
+		height: 100%;
+		min-height: 315px;
+	}
+
+}
+
+.movies_item_body {
+	text-align: left;
+}
+
+.artist_name {
+	padding: 10px 0;
+	p {
+		font-weight: bold;
+	}
+}
+
+.movie_comment {
+	padding: 10px 0;
+	p {
+		font-weight: bold;
+	}
+}
+
+.movie_delete {
+	text-align: right;
+}
+
+.delete_btn {
+	background-color: grey;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	padding: 2px 10px;
+	border-radius: 7px;
+
+}
+
+// -----
+// フォーム
+// -----
+
+.form_title {
+    margin-top: 30px;
+    text-align: center;
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+}
+
+.form_inner {
+    background-color: #fff;
+    margin: 50px 0;
+    padding: 20px 40px 40px 40px;
+    border-radius: 10px;
+    margin: 50px auto;
+}
+
+.form_items {
+    margin-top: 80px;
+}
+
+
+.form_item {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+
+label {
+    width: 20%;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    @include mq('sp') {
+        width: 40%;
+        font-size: 0.9rem;
+    }
+}
+
+.form_control {
+    width: 60%;
+    height: 33px;
+    margin: 0 auto;
+}
+
+.form_footer {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.form_btn {
+    background-color: $color-main;
+    padding: 10px 120px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+        opacity: $hover-opacity;
+    }
+}
+
+.form_explain {
+	text-align: left;
+	margin-left: 35%;
+}
+
+.movie_url {
+	font-weight: bold;
+}
+
+.form_explain {
+	margin-top: 10px;
+	line-height: $line-height-base;
+
+	p {
+		font-size: 0.9rem;
+	}
+}
+
+textarea {
+	resize: vertical;
+}
+
+.pagination {
+	display: flex;
+	padding-left: 0;
+	list-style: none;
+	border-radius: 0.25rem;
+	justify-content: center;
+}
+
+.page-link {
+	position: relative;
+	display: block;
+	padding: 0.75rem 1.0rem;
+	margin-left: -1px;
+	line-height: 1.25;
+	color: #fff;
+	font-size: 1.2rem;
+	font-weight: bold;
+	background-color: #333;
+	border: 1px solid #dee2e6;
+	cursor: pointer;
+
+	&:hover {
+	z-index: 2;
+	color: $color-main;
+	text-decoration: none;
+	background-color: #e9ecef;
+	border-color: #dee2e6;
+
+	}
+
+	&:focus {
+	z-index: 3;
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+	}
+}
+
+
+
+
+
+
+
