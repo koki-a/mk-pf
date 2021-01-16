@@ -6,7 +6,7 @@
                     <p class="top_sub hidden-sp">君の好きな音楽を<br class="hidden-pc">投稿しよう</p>
                 </div>
                 <div class="top_footer">
-                    <button class="btn top_btn" type="submit">▶︎</button>
+                    <a class="btn top_btn" href="">▶︎</a>
                 </div>
             </div>
         </top>
