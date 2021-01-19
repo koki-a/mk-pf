@@ -38,7 +38,7 @@ class UsersTableSeeder extends Seeder
         ]);
         DB::table('users')->insert([
             'name' => 'guest',
-            'email' => 'guest@guest.com',
+            'email' => 'guest@gmail.com',
             'password' => 'guestpassword'
         ]);
     }

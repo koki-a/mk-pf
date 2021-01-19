@@ -277,6 +277,13 @@ img {
   }
 }
 
+.channel_name {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 2.0rem;
+  font-weight: bold;
+}
+
 .movies_items {
   margin-top: 50px;
   display: flex;
@@ -361,6 +368,14 @@ img {
   font-weight: bold;
 }
 
+.movie_user {
+  padding: 5px 0;
+}
+
+.movie_user p {
+  font-weight: bold;
+}
+
 .movie_delete {
   text-align: right;
 }
@@ -372,6 +387,25 @@ img {
   cursor: pointer;
   padding: 2px 10px;
   border-radius: 7px;
+}
+
+.movies_follow {
+  margin-top: 5px;
+  text-align: right;
+}
+
+.follow_btn {
+  background-color: blue;
+  border: none;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  padding: 2px 10px;
+  border-radius: 7px;
+}
+
+.follow_btn:hover {
+  opacity: .7;
 }
 
 .form_title {

@@ -1,7 +1,7 @@
  <section class="movies">
         <div class="movies_inner inner">
             <div class="section_title">
-                <h2>Your Movies</h2>
+                <h2>"{{ $user->channel }}"</h2>
             </div>
             <div class="movies_items">
 

@@ -13,6 +13,10 @@ class CreateMoviesTable extends Migration
      */
     public function up()
     {
+        if (Schema::hasTable('movies')) {
+            // テーブルが存在していればリターン
+            return;
+        }
         Schema::create('movies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned()->index();

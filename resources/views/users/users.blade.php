@@ -28,6 +28,12 @@
                                 @endif
                             </p>
                         </div>
+                        <div class="movie_user">
+                            <p>ユーザー：
+                                {{ $user->name }}
+                            </p>
+                            @include('follow.follow_button',['user' => $user])
+                        </div>
                     </div>
                 </div>
                 @endforeach
