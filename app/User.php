@@ -52,20 +52,21 @@ class User extends Authenticatable
         return $this->belongsToMany(User::class, 'user_follow', 'follow_id', 'user_id')->withTimestamps();
     }
 
+
     public function is_following($userId)
     {
-        return $this->followings()->where('user_id', '$userId')->exists();
+        return $this->followings()->where('follow_id', $userId)->exists();
     }
 
     public function follow($userId)
     {
         // すでにフォロー済みではないか？
-        $existing = $this->is_following($userId);
+        $exist = $this->is_following($userId);
         // フォローする相手がユーザ自身ではないか？
         $myself = $this->id == $userId;
 
         // フォロー済みではない、かつフォロー相手がユーザ自身ではない場合、フォロー
-        if (!$existing && !$myself) {
+        if (!$exist && !$myself) {
             $this->followings()->attach($userId);
         }
     }
@@ -73,12 +74,12 @@ class User extends Authenticatable
     public function unfollow($userId)
     {
         // すでにフォロー済みではないか？
-        $existing = $this->is_following($userId);
+        $exist = $this->is_following($userId);
         // フォローを外す相手がユーザ自身ではないか？
         $myself = $this->id == $userId;
 
         // すでにフォロー済み、かつフォロー相手がユーザ自身ではない場合、フォローを外す
-        if ($existing && !$myself) {
+        if ($exist && !$myself) {
             $this->followings()->detach($userId);
         }
     }

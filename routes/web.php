@@ -40,7 +40,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('movies', 'MoviesController', ['only' => ['create', 'store', 'destroy']]);
     Route::resource('users', 'UsersController', ['only' => ['show']]);
 
-    Route::group(['prefix' => 'user/{id}'],function(){
+    Route::group(['prefix' => 'users/{id}'],function(){
         Route::post('follow','UserFollowController@store')->name('follow');
         Route::delete('unfollow','UserFollowController@destroy')->name('unfollow');
     });

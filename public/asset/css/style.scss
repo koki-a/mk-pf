@@ -440,6 +440,7 @@ img {
 	cursor: pointer;
 	padding: 2px 10px;
 	border-radius: 7px;
+	outline: none;
 }
 
 .movies_follow {
@@ -455,10 +456,24 @@ img {
 	cursor: pointer;
 	padding: 2px 10px;
 	border-radius: 7px;
+	outline: none;
 	&:hover{
 		opacity: .7;
 	}
+}
 
+.unfollow_btn {
+	background-color: $color-main;
+	border: none;
+	font-weight: bold;
+	color: #fff;
+	cursor: pointer;
+	padding: 2px 10px;
+	border-radius: 7px;
+	outline: none;
+	&:hover{
+		opacity: .7;
+	}
 }
 
 // -----
@@ -523,7 +538,8 @@ label {
     font-size: 1.2rem;
     font-weight: bold;
     color: #fff;
-    cursor: pointer;
+	cursor: pointer;
+	outline: none;
 
     &:hover {
         opacity: $hover-opacity;
@@ -572,13 +588,13 @@ textarea {
 	background-color: #333;
 	border: 1px solid #dee2e6;
 	cursor: pointer;
+	outline: none;
 
 	&:hover {
 	z-index: 2;
 	color: $color-main;
 	text-decoration: none;
 	background-color: #e9ecef;
-	border-color: #dee2e6;
 
 	}
 
@@ -586,6 +602,76 @@ textarea {
 	z-index: 3;
 	outline: 0;
 	box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+	}
+}
+
+// -----
+// タブ
+// -----
+
+.tabs {
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+.tabs_items {
+	display: flex;
+	justify-content: center;
+	
+}
+
+.tab_item {
+	border: $color-background-base 5px solid;
+	width: 20%;
+
+	@include mq('sp') {
+		width: 33.333%;
+	}
+}
+
+.tab_body {
+	background-color: $color-main;
+	border-radius: 10px;
+	padding: 8px;
+	&:hover {
+		opacity: .7;
+	}
+}
+
+.tab_name {
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+	padding: 2px 5px;
+	@include mq('sp') {
+		padding: 0;
+	}
+	
+	p {
+		font-size: 1.3rem;
+		font-weight: bold;
+
+		@include mq('tab') {
+			font-size: 1.0em;
+		}
+	}
+
+}
+
+.count {
+	text-align: center;
+	padding-top: 15px;
+	@include mq('sp') {
+		padding-top: 5px;
+	}
+	p {
+		font-size: 2rem;
+		font-weight: bold;
+
+		@include mq('sp') {
+			
+			font-size: 1rem;
+		}
 	}
 }
 
