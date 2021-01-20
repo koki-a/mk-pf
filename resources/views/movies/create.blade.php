@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
+
+
 @section('content')
+@include('commons.errors_msg')
 <div class="form">
     <div class="form_inner inner">
         <div class="form_title">

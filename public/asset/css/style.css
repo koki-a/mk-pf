@@ -174,7 +174,7 @@ img {
 
 .top_title {
   color: #fff;
-  font-size: 6.3vw;
+  font-size: 5.8vw;
   font-weight: bold;
 }
 
@@ -241,6 +241,22 @@ img {
 .top_btn:hover {
   -webkit-transform: rotateY(360deg);
   transform: rotateY(360deg);
+}
+
+.auth_user {
+  margin-top: 35px;
+  text-align: right;
+}
+
+.auth_user p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.auth_user_name {
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #e81919;
 }
 
 .footer {
@@ -550,6 +566,20 @@ textarea {
   z-index: 3;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+}
+
+.errors_box {
+  margin-top: 30px;
+  background-color: pink;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.error_content {
+  color: #e81919;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.6;
 }
 
 .tabs {

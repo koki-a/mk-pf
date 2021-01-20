@@ -1,6 +1,7 @@
     
     <section class="movies">
         <div class="movies_inner inner">
+        
             <div class="section_title">
                 <h2>Movies</h2>
             </div>

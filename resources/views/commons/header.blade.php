@@ -3,7 +3,7 @@
 
         <div class="inner header_inner">
             <a href="/" class="header_title">
-                <h1 class="">PostYourMusic</h1>
+                <h1 class="">ShareYourMusic</h1>
             </a>
             <button type="button" class="drawer-toggle drawer-hamburger hidden-pc hidden-tab">
                 <span class="sr-only">toggle navigation</span>

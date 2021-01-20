@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('commons.errors_msg')
 <div class="form">
     <div class="form_inner inner">
         <div class="form_title">
@@ -9,7 +10,7 @@
         <div class="form_items">
             {!! Form::open(['route' => 'signup.post']) !!}
                 <div class="form_item">
-                        {!! Form::label('name', '名前') !!}
+                        {!! Form::label('name', 'ユーザー名') !!}
                         {!! Form::text('name', old('name'), ['class' => 'form_control']) !!}
                 </div>
 

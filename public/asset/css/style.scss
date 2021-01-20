@@ -241,7 +241,7 @@ img {
 
 .top_title {
 	color: #fff;
-	font-size: 6.3vw;
+	font-size: 5.8vw;
 	@include mq("sp") {
 		font-size: 3rem;
 		line-height: 1.3;
@@ -299,6 +299,23 @@ img {
 		-webkit-transform: rotateY(360deg);
 		transform: rotateY(360deg);
 	}
+}
+
+.auth_user {
+	margin-top: 35px;
+	text-align: right;
+
+	p {
+		font-size: 1.2rem;
+		font-weight: bold;
+		
+	}
+}
+
+.auth_user_name {
+	font-weight: bold;
+	font-size: 1.3em;
+	color: $color-main;
 }
 
 // -----
@@ -603,6 +620,20 @@ textarea {
 	outline: 0;
 	box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 	}
+}
+
+.errors_box {
+	margin-top: 30px;
+	background-color: pink;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.error_content {
+	color: $color-main;
+	font-size: 1.2rem;
+	font-weight: bold;
+	line-height: $line-height-base;
 }
 
 // -----
