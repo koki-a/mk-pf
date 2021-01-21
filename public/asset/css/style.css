@@ -377,11 +377,12 @@ img {
 }
 
 .movie_comment {
-  padding: 10px 0;
+  padding: 8px 0;
 }
 
 .movie_comment p {
   font-weight: bold;
+  line-height: 1.6;
 }
 
 .movie_user {
