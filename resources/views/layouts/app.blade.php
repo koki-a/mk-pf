@@ -19,10 +19,10 @@
     <script src="/js/wow.min.js"></script>
     <link rel="stylesheet" href="css/animate.css">
     <!-- original -->
-    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('asset/css/style.css') }}">
     <script src="/resources/js/script.js"></script>
     <!--  reset css  -->
-    <link rel="stylesheet" href="{{ asset('asset/css/reset.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('asset/css/reset.css') }}">
 
 </head>
 
