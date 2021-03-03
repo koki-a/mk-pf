@@ -9,6 +9,7 @@
                 @foreach($users as $user)
 
                 @php
+
                 $movie = $user->movies->first();
 
                 if($movie){
@@ -20,12 +21,12 @@
                 if($json){
                 $getData = json_decode( $json , true);
                 if($getData['pageInfo']['totalResults']==0){
-                    $video_title="※動画が未登録です";
+                    $video_title = "※動画が未登録です";
                     }else{
-                    $video_title=$getData['items']['0']['snippet']['title'];
+                    $video_title = $getData['items']['0']['snippet']['title'];
                 }
                     }else{
-                        $video_title="※一時的な情報制限中です";
+                        $video_title = "※一時的な情報制限中です";
                     }
                 }
 
@@ -45,8 +46,7 @@
                             <p>
                                 @if(isset($movie->comment))
                                 コメント：{{ $movie->comment }}
-                                @else
-                                {{ $video_title }}
+                                
                                 @endif
                             </p>
                         </div>
