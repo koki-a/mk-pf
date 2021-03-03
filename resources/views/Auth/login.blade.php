@@ -1,9 +1,11 @@
 @extends('layouts.app')
 @section('content')
+@include('commons.errors_msg')
 <div class="form">
     <div class="form_inner inner">
         <div class="form_title">
             <h2>ログイン</h2>
+            <p>すでにメールアドレスでユーザー登録済みの方は、<br>こちらからログインできます。</p>
         </div>
         <div class="form_items">
             {!! Form::open(['route' => 'login.post']) !!}

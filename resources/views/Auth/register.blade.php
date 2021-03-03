@@ -6,6 +6,7 @@
     <div class="form_inner inner">
         <div class="form_title">
             <h2>新規ユーザー登録</h2>
+            <p>ユーザー登録をすると動画を投稿できるようになります。</p>
         </div>
         <div class="form_items">
             {!! Form::open(['route' => 'signup.post']) !!}

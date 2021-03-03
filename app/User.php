@@ -60,9 +60,9 @@ class User extends Authenticatable
 
     public function follow($userId)
     {
-        // すでにフォロー済みではないか？
+        // すでにフォロー済みではないか
         $exist = $this->is_following($userId);
-        // フォローする相手がユーザ自身ではないか？
+        // フォローする相手がユーザ自身ではないか
         $myself = $this->id == $userId;
 
         // フォロー済みではない、かつフォロー相手がユーザ自身ではない場合、フォロー

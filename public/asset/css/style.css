@@ -283,20 +283,20 @@ img {
 }
 
 .section_title h2 {
-  font-size: 3.0rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 
 @media (max-width: 767px) {
   .section_title h2 {
-    font-size: 2.0rem;
+    font-size: 2rem;
   }
 }
 
 .channel_name {
   margin-top: 20px;
   text-align: center;
-  font-size: 2.0rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -407,6 +407,10 @@ img {
   outline: none;
 }
 
+.delete_btn:hover {
+  opacity: 0.6;
+}
+
 .movies_follow {
   margin-top: 5px;
   text-align: right;
@@ -424,7 +428,7 @@ img {
 }
 
 .follow_btn:hover {
-  opacity: .7;
+  opacity: 0.6;
 }
 
 .unfollow_btn {
@@ -439,7 +443,7 @@ img {
 }
 
 .unfollow_btn:hover {
-  opacity: .7;
+  opacity: 0.6;
 }
 
 .form_title {
@@ -450,6 +454,14 @@ img {
 .form_title h2 {
   font-size: 2rem;
   font-weight: bold;
+  color: #e81919;
+}
+
+.form_title p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.6;
 }
 
 .form_inner {
@@ -461,7 +473,7 @@ img {
 }
 
 .form_items {
-  margin-top: 80px;
+  margin-top: 65px;
 }
 
 .form_item {
@@ -544,7 +556,7 @@ textarea {
 .page-link {
   position: relative;
   display: block;
-  padding: 0.75rem 1.0rem;
+  padding: 0.75rem 1rem;
   margin-left: -1px;
   line-height: 1.25;
   color: #fff;
@@ -566,7 +578,6 @@ textarea {
 .page-link:focus {
   z-index: 3;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .errors_box {
@@ -611,7 +622,7 @@ textarea {
 }
 
 .tab_body:hover {
-  opacity: .7;
+  opacity: 0.6;
 }
 
 .tab_name {
@@ -634,7 +645,7 @@ textarea {
 
 @media (max-width: 1247px) {
   .tab_name p {
-    font-size: 1.0em;
+    font-size: 1em;
   }
 }
 

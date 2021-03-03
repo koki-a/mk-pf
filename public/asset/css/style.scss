@@ -199,11 +199,11 @@ img {
 	position: relative;
 	display: inline-block;
 	transition: 0.3s;
-    padding: 10px 0;
+	padding: 10px 0;
 
-    &:hover {
-        color: #333;
-    }
+	&:hover {
+		color: #333;
+	}
 
 	&::after {
 		position: absolute;
@@ -217,7 +217,7 @@ img {
 	}
 
 	&:hover::after {
-        width: 100%;
+		width: 100%;
 	}
 }
 
@@ -308,7 +308,6 @@ img {
 	p {
 		font-size: 1.2rem;
 		font-weight: bold;
-		
 	}
 }
 
@@ -348,11 +347,11 @@ img {
 .section_title {
 	text-align: center;
 	h2 {
-		font-size: 3.0rem;
+		font-size: 3rem;
 		font-weight: bold;
 
-		@include mq('sp') {
-			font-size: 2.0rem;
+		@include mq("sp") {
+			font-size: 2rem;
 		}
 	}
 }
@@ -360,16 +359,15 @@ img {
 .channel_name {
 	margin-top: 20px;
 	text-align: center;
-	font-size: 2.0rem;
+	font-size: 2rem;
 	font-weight: bold;
-	
 }
 
 .movies_items {
 	margin-top: 50px;
 	display: flex;
 	flex-wrap: wrap;
-	@include mq('sp') {
+	@include mq("sp") {
 		margin-top: 30px;
 		display: block;
 	}
@@ -383,8 +381,7 @@ img {
 	border-radius: 3px;
 	box-shadow: 0 0 2px gray;
 
-
-	@include mq('pc') {
+	@include mq("pc") {
 		margin: 0 50px 50px 0;
 		width: calc(33.3333333% - 100px / 3);
 		&:nth-child(3n) {
@@ -392,7 +389,7 @@ img {
 		}
 	}
 
-	@include mq('tab') {
+	@include mq("tab") {
 		width: calc(50% - 50px / 2);
 		margin: 0 50px 50px 0;
 
@@ -404,13 +401,13 @@ img {
 		}
 	}
 
-	@include mq('sp') {
+	@include mq("sp") {
 		width: 100%;
 	}
 }
 
 .movies_item_head {
-	@include mq('sp') {
+	@include mq("sp") {
 		margin: 0 auto;
 	}
 	iframe {
@@ -419,7 +416,6 @@ img {
 		height: 100%;
 		min-height: 315px;
 	}
-
 }
 
 .movies_item_body {
@@ -459,6 +455,10 @@ img {
 	padding: 2px 10px;
 	border-radius: 7px;
 	outline: none;
+
+	&:hover {
+		opacity: $hover-opacity;
+	}
 }
 
 .movies_follow {
@@ -475,8 +475,8 @@ img {
 	padding: 2px 10px;
 	border-radius: 7px;
 	outline: none;
-	&:hover{
-		opacity: .7;
+	&:hover {
+		opacity: $hover-opacity;
 	}
 }
 
@@ -489,8 +489,8 @@ img {
 	padding: 2px 10px;
 	border-radius: 7px;
 	outline: none;
-	&:hover{
-		opacity: .7;
+	&:hover {
+		opacity: $hover-opacity;
 	}
 }
 
@@ -499,69 +499,75 @@ img {
 // -----
 
 .form_title {
-    margin-top: 30px;
-    text-align: center;
-    h2 {
-        font-size: 2rem;
-        font-weight: bold;
-    }
+	margin-top: 30px;
+	text-align: center;
+	h2 {
+		font-size: 2rem;
+		font-weight: bold;
+		color: $color-main;
+	}
+	p {
+		margin-top: 20px;
+		font-size: 1.2rem;
+		font-weight: bold;
+		line-height: $line-height-base;
+	}
 }
 
 .form_inner {
-    background-color: #fff;
-    margin: 50px 0;
-    padding: 20px 40px 40px 40px;
-    border-radius: 10px;
-    margin: 50px auto;
+	background-color: #fff;
+	margin: 50px 0;
+	padding: 20px 40px 40px 40px;
+	border-radius: 10px;
+	margin: 50px auto;
 }
 
 .form_items {
-    margin-top: 80px;
+	margin-top: 65px;
 }
 
-
 .form_item {
-    display: flex;
-    align-items: center;
-    margin-top: 40px;
+	display: flex;
+	align-items: center;
+	margin-top: 40px;
 }
 
 label {
-    width: 20%;
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin: 0 auto;
-    @include mq('sp') {
-        width: 40%;
-        font-size: 0.9rem;
-    }
+	width: 20%;
+	font-weight: bold;
+	font-size: 1.2rem;
+	margin: 0 auto;
+	@include mq("sp") {
+		width: 40%;
+		font-size: 0.9rem;
+	}
 }
 
 .form_control {
-    width: 60%;
-    height: 33px;
-    margin: 0 auto;
+	width: 60%;
+	height: 33px;
+	margin: 0 auto;
 }
 
 .form_footer {
-    text-align: center;
-    margin-top: 60px;
+	text-align: center;
+	margin-top: 60px;
 }
 
 .form_btn {
-    background-color: $color-main;
-    padding: 10px 120px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff;
+	background-color: $color-main;
+	padding: 10px 120px;
+	border: none;
+	border-radius: 5px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #fff;
 	cursor: pointer;
 	outline: none;
 
-    &:hover {
-        opacity: $hover-opacity;
-    }
+	&:hover {
+		opacity: $hover-opacity;
+	}
 }
 
 .form_explain {
@@ -597,7 +603,7 @@ textarea {
 .page-link {
 	position: relative;
 	display: block;
-	padding: 0.75rem 1.0rem;
+	padding: 0.75rem 1rem;
 	margin-left: -1px;
 	line-height: 1.25;
 	color: #fff;
@@ -609,17 +615,15 @@ textarea {
 	outline: none;
 
 	&:hover {
-	z-index: 2;
-	color: $color-main;
-	text-decoration: none;
-	background-color: #e9ecef;
-
+		z-index: 2;
+		color: $color-main;
+		text-decoration: none;
+		background-color: #e9ecef;
 	}
 
 	&:focus {
-	z-index: 3;
-	outline: 0;
-	box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+		z-index: 3;
+		outline: 0;
 	}
 }
 
@@ -649,14 +653,13 @@ textarea {
 .tabs_items {
 	display: flex;
 	justify-content: center;
-	
 }
 
 .tab_item {
 	border: $color-background-base 5px solid;
 	width: 20%;
 
-	@include mq('sp') {
+	@include mq("sp") {
 		width: 33.333%;
 	}
 }
@@ -666,7 +669,7 @@ textarea {
 	border-radius: 10px;
 	padding: 8px;
 	&:hover {
-		opacity: .7;
+		opacity: $hover-opacity;
 	}
 }
 
@@ -675,41 +678,32 @@ textarea {
 	color: #fff;
 	text-align: center;
 	padding: 2px 5px;
-	@include mq('sp') {
+	@include mq("sp") {
 		padding: 0;
 	}
-	
+
 	p {
 		font-size: 1.3rem;
 		font-weight: bold;
 
-		@include mq('tab') {
-			font-size: 1.0em;
+		@include mq("tab") {
+			font-size: 1em;
 		}
 	}
-
 }
 
 .count {
 	text-align: center;
 	padding-top: 15px;
-	@include mq('sp') {
+	@include mq("sp") {
 		padding-top: 5px;
 	}
 	p {
 		font-size: 2rem;
 		font-weight: bold;
 
-		@include mq('sp') {
-			
+		@include mq("sp") {
 			font-size: 1rem;
 		}
 	}
 }
-
-
-
-
-
-
-

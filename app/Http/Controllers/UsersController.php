@@ -41,6 +41,8 @@ class UsersController extends Controller
         return view('users.show',$data);
     }
 
+    //編集する
+
     public function rename(Request $request){
 
         $this->validate($request,[

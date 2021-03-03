@@ -9,7 +9,7 @@ use App\Movie;
 class MoviesController extends Controller
 {
 
-    //データを作成
+    //登録画面を表示
 
     public function create()
     {
