@@ -28,6 +28,7 @@
                         {!! Form::submit('ログイン', ['class' => 'form_btn']) !!}
                 </div>
             {!! Form::close() !!}
+            
         </div>
 
     </div>
