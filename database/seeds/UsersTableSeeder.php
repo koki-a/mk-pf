@@ -12,29 +12,29 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'sample1',
-            'email' => 'sample1@sample.com',
-            'password' => bcrypt('sample1')
+            'name' => 'test1',
+            'email' => 'test@test.com',
+            'password' => bcrypt('testtest')
         ]);
         DB::table('users')->insert([
-            'name' => 'sample2',
-            'email' => 'sample2@sample.com',
-            'password' => bcrypt('sample2')
+            'name' => 'test2',
+            'email' => 'test2@test.com',
+            'password' => bcrypt('testtest2')
         ]);
         DB::table('users')->insert([
-            'name' => 'sample3',
-            'email' => 'sample3@sample.com',
-            'password' => bcrypt('sample3')
+            'name' => 'test3',
+            'email' => 'test3@test.com',
+            'password' => bcrypt('testtest3')
         ]);
         DB::table('users')->insert([
-            'name' => 'sample4',
-            'email' => 'sample4@sample.com',
-            'password' => bcrypt('sample4')
+            'name' => 'test4',
+            'email' => 'test4@test.com',
+            'password' => bcrypt('testtest4')
         ]);
         DB::table('users')->insert([
-            'name' => 'sample5',
-            'email' => 'sample5@sample.com',
-            'password' => bcrypt('sample5')
+            'name' => 'test5',
+            'email' => 'test5@test.com',
+            'password' => bcrypt('testtest5')
         ]);
         DB::table('users')->insert([
             'name' => 'guest',
