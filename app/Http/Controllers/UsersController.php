@@ -92,6 +92,7 @@ class UsersController extends Controller
             'users' => $followers,
         ];
 
+        
         $data += $this->counts($user);
 
         return view('users.followers', $data);
